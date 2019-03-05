@@ -1,0 +1,8 @@
+.main{
+    display: flexbox;
+}
+
+.quizStart {
+    text-align: center;
+    margin-top: 200px;
+}
