@@ -1,3 +1,15 @@
+header {
+    display: inline-flex;
+}
+
+.questionNumber {
+    font-size: 20 px
+}
+.numberCorrect {
+    font-size: 20 px;
+    float: right;
+    padding: 20 px;
+}
 .main{
     display: flexbox;
 }
@@ -5,4 +17,13 @@
 .quizStart {
     text-align: center;
     margin-top: 200px;
+}
+
+.question {
+    text-align: center;
+}
+.moveOn {
+   
+    margin-right: 10 px;
+    margin-bottom: 10 px; 
 }
