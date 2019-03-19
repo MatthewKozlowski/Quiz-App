@@ -1,5 +1,7 @@
 header {
     display: inline-flex;
+    background-color: lightgreen;
+    width: 100%;
 }
 
 .hide {
@@ -10,8 +12,8 @@ header {
 }
 .numberCorrect {
     font-size: 20 px;
-    float: right;
     padding: 20 px;
+    text-align: right;
 }
 .main{
     display: flexbox;
@@ -35,7 +37,8 @@ header {
     margin-bottom: 10 px; 
 }
 
-.babyGoatEating {
-    height: 20%;
-    width: 20%;
+.imageSizing {
+    height: 40%;
+    width: 40%;
 }
+
