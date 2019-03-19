@@ -32,6 +32,6 @@ const STORE = [
         answers: [
             'Boer', 'Myotonic', 'Anglo-Nubian', 'Pygora'
         ],
-        correctAnswer: ''
+        correctAnswer: 'Myotonic'
     }
 ];
