@@ -35,3 +35,7 @@ const STORE = [
         correctAnswer: 'Myotonic'
     }
 ];
+
+const FEEDBACK = [
+    
+]

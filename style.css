@@ -1,44 +1,101 @@
+.main {
+    display: flexbox;
+    font-family: 'Sniglet', cursive;
+    margin: auto;
+}
+
+/* Begin header styling*/
+
 header {
     display: inline-flex;
-    background-color: lightgreen;
+    /*
+    background-image: url("https://www.clongen.com/wp-content/uploads/2015/02/goat-banner.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    */background-color: lightgreen;
     width: 100%;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.headerQuestionTitle {
+    padding-right: .5%;
+    padding-left: .5%;
+}
+
+.headerCorrectTitle {
+    padding-right: .5%;
+}
+
+.questionCounter {
+    padding-right: 85%;
 }
 
 .hide {
     visibility: hidden;
 }
-.questionNumber {
-    font-size: 20 px
-}
-.numberCorrect {
-    font-size: 20 px;
-    padding: 20 px;
-    text-align: right;
-}
-.main{
-    display: flexbox;
-}
+
+/* End header styling */
+
+/* Begin start screen styling */
 
 .quizStart {
     text-align: center;
-    margin-top: 200px;
 }
+
+.quizTitle {
+
+}
+
+/* End start screen styling */
+
+/* Begin question styling */
 
 .question {
     text-align: center;
 }
 
-.nextQuestion {
-    margin-top: 15 px;
+fieldset {
+    border: none;
 }
+
+.answerChoice {
+    background-color: pink;
+    width: 200px;
+    height: 200px;
+}
+
+button {
+    display: inline-block;
+    width: 25%;
+    background-color: pink;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nextQuestion {
+    margin-top: 15px;
+}
+
 .moveOn {
    
-    margin-right: 10 px;
-    margin-bottom: 10 px; 
+    margin-right: 10px;
+    margin-bottom: 10px; 
 }
 
 .imageSizing {
-    height: 40%;
-    width: 40%;
+    height: 20%;
+    width: 20%;
 }
+
+/* End question styling */
+
+/* Begin end screen styling */
+
+.quizEndScreen {
+    text-align: center;
+}
+
+/* End end screen styling
 

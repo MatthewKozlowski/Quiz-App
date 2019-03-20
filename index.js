@@ -99,7 +99,9 @@ function checkAnswer() {
        let userAnswer = userChoice.val();
        if (userAnswer === STORE[questionNumber-1].correctAnswer) {  
         userAnswerCorrect();
-       } else {userAnswerIncorrect();}
+       } else {
+           userAnswerIncorrect();
+        }
    })
 }
 
@@ -111,20 +113,20 @@ function userAnswerCorrect() {
 
 function correctAnswerDisplay() {
     if (overallScore === 1 && questionNumber < STORE.length){
-    return `<div class="correctAnswerDisplay">
-    <h2>Correct!</h2>
-    <h2>You Nailed it!</h2>
-    <p>Maybe you're more goat than you first appear?</p>
-    <img src="https://edenhills.files.wordpress.com/2011/03/dsc_0219.jpg"  class="imageSizing">
-</div>
-<button type="button" class="moveOn">MoveOn</button>`
+        return `<div class="correctAnswerDisplay">
+        <h2>Correct!</h2>
+        <h2>You Nailed it!</h2>
+        <p>Maybe you're more goat than you first appear?</p>
+        <img src="https://edenhills.files.wordpress.com/2011/03/dsc_0219.jpg"  class="imageSizing">
+        </div>
+        <button type="button" class="moveOn">MoveOn</button>`
     } else if (overallScore === 2 && questionNumber < STORE.length) {
         return `<div class="correctAnswerDisplay">
         <h2>Correct!</h2>
         <h2>A kid no more!</h2>
         <p>That's two correct! Well done!</p>
         <img src="https://i.imgur.com/XC5UeJr.jpg" class="imageSizing">
-    </div>
+        </div>
     <button type="button" class="moveOn">MoveOn</button>`
     } else if (overallScore === 3 && questionNumber < STORE.length) {
         return `<div class="correctAnswerDisplay">
@@ -239,10 +241,10 @@ function createEndScreen() {
     $('header').addClass('hide');
     generateGoatRating();
     return `<div class="quizEndScreen">
-    <h1>Overall Score: ${overallScore}</h1>
-    <h2>Goat Rating: ${goatRating[0]} - ${goatRating[1]}</h2>
-    <button class="restartButton">Start Over?</button>
-</div>`
+        <h1>Overall Score: ${overallScore}</h1>
+        <h2>Goat Rating: ${goatRating[0]} - ${goatRating[1]}</h2>
+        <button class="restartButton">Start Over?</button>
+        </div>`
 }
 
 function restartQuiz() {
@@ -269,7 +271,7 @@ function generateGoatRating() {
         goatRating.push("Dang! Are you actually a goat and just misclicked with a hoof?");
     } else if (overallScore === 5) {
         goatRating.push("100%");
-        goatRating.push("You aren't just the goat. You're the G.O.A.T");
+        goatRating.push("You aren't just a goat. You're the G.O.A.T");
     } 
 
 }
