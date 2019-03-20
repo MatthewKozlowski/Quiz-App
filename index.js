@@ -101,20 +101,20 @@ function userAnswerCorrect() {
 }
 
 function correctAnswerDisplay() {
-    if (overallScore === 1 && questionNumber < STORE.length){
+    if (questionNumber < STORE.length){
         return `<div class="correctAnswerDisplay">
         <h2>Correct!</h2>
-        <h2>You Nailed it!</h2>
-        <p>Maybe you're more goat than you first appear?</p>
-        <img src="https://edenhills.files.wordpress.com/2011/03/dsc_0219.jpg"  class="imageSizing">
+        <h2>${FEEDBACK[overallScore-1].heading}</h2>
+        <p>${FEEDBACK[overallScore-1].paragraph}</p>
+        <img src="${FEEDBACK[overallScore-1].image}"  class="imageSizing">
         </div>
         <button type="button" class="moveOn">MoveOn</button>`
-    } else if (overallScore === 2 && questionNumber < STORE.length) {
+    /*} else if (overallScore === 2 && questionNumber < STORE.length) {
         return `<div class="correctAnswerDisplay">
         <h2>Correct!</h2>
-        <h2>A kid no more!</h2>
-        <p>That's two correct! Well done!</p>
-        <img src="https://i.imgur.com/XC5UeJr.jpg" class="imageSizing">
+        <h2></h2>
+        <p></p>
+        <img src="" class="imageSizing">
         </div>
     <button type="button" class="moveOn">MoveOn</button>`
     } else if (overallScore === 3 && questionNumber < STORE.length) {
@@ -148,7 +148,7 @@ function correctAnswerDisplay() {
         <p>Let's see how you did!</p>
         <img src="http://www.adobeacres.net/IMG_1499.JPG" class="imageSizing">
     </div>
-    <button type="button" class="seeResults">See Results!</button>`
+    <button type="button" class="seeResults">See Results!</button>`*/
     }
 
 }

@@ -38,6 +38,24 @@ const STORE = [
 
 const FEEDBACK = [
     {
-        
-    }
+       heading: 'You nailed it!',
+       paragraph: 'Maybe you are more goat than you first appear?',
+       image: 'https://edenhills.files.wordpress.com/2011/03/dsc_0219.jpg'
+    },
+    {
+        heading: 'A kid no more!',
+        paragraph: 'Two correct! Well done!?',
+        image: 'https://i.imgur.com/XC5UeJr.jpg'
+     },
+     {
+        heading: 'You nailed it!',
+        paragraph: 'Maybe you are more goat than you first appear?',
+        image: 'https://edenhills.files.wordpress.com/2011/03/dsc_0219.jpg'
+     },
+     {
+        heading: 'You nailed it!',
+        paragraph: 'Maybe you are more goat than you first appear?',
+        image: 'https://edenhills.files.wordpress.com/2011/03/dsc_0219.jpg'
+     },
+
 ]
