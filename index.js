@@ -15,38 +15,33 @@ function quizStart() {
 function createQuestion() {
     if(questionNumber-1 < STORE.length) {
         return `<div class="question">
-        <h2>${STORE[questionNumber-1].question}</h2>
-        <form>
+            <h2>${STORE[questionNumber-1].question}</h2>
+            <form>
             <fieldset>
-            <label class="answerChoice">
-                <input type="radio" value="${STORE[questionNumber-1].answers[0]}" name="answer">
-                <span>${STORE[questionNumber-1].answers[0]}</span>
-            </label>
+            <div class="answerContainer"></div>
             <br>
-            <label class="answerChoice">
-                <input type="radio" value="${STORE[questionNumber-1].answers[1]}" name="answer">
-                <span>${STORE[questionNumber-1].answers[1]}</span>
-            </label>
-            <br>
-            <label class="answerChoice">
-                <input type="radio" value="${STORE[questionNumber-1].answers[2]}" name="answer">
-                <span>${STORE[questionNumber-1].answers[2]}</span>
-            </label>
-            <br>
-            <label class="answerChoice">
-                <input type="radio" value="${STORE[questionNumber-1].answers[3]}" name="answer">
-                <span>${STORE[questionNumber-1].answers[3]}</span>
-            </label>
-            <br><br>
             <button type="submit" class="submitButton">Submit</button>    
-        </fieldset>
-    </form>
-    
-    <button type="button" class="moveOn hide">MoveOn</button>
- 
-    </div>`
+            </fieldset>
+            </form>
+            <button type="button" class="moveOn hide">MoveOn</button>
+            </div>`
     }
 }
+
+function renderQuestion() {
+    $('.answerForm').html(createQuestion());
+    for (let i = 0; i < 4; i++) {
+    $('.answerContainer').append(createAnswerChoices(i));
+    }
+}
+
+function createAnswerChoices(i) {
+    return `<label class="answerChoice">
+            <input type="radio" value="${STORE[questionNumber-1].answers[i]}" name="answer">
+            <span>${STORE[questionNumber-1].answers[i]}</span>
+            </label><br>`
+}
+
 
 function updateQuestionNumber() {
     if (questionNumber < STORE.length) {
@@ -54,12 +49,6 @@ function updateQuestionNumber() {
      $('.questionNumber').text(questionNumber);
     }
  }
- 
-function renderQuestion() {
-    $('.answerForm').html(createQuestion());
-}
-
-
 
 function showHeader() {
     $('header').removeClass('hide');
