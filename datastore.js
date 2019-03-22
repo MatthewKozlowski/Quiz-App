@@ -65,7 +65,7 @@ const FEEDBACK = [
         heading: 'Wow.',
         paragraph: 'That\'s...that\'s a perfect score.',
         image: 'https://s3.amazonaws.com/file.imleagues/Images/Teams/Uploaded/201802/201822142647906dafc8cf55e71f60e768dee7a828b291c.jpg',
-        button: '<button type="button" class="seeResults">See Results!</button>'
+        button: '<button type="button" class="seeResults"><span>See Results!</span></button>'
     },
     {
         heading: 'Oh no! You got that one wrong!',
@@ -95,6 +95,6 @@ const FEEDBACK = [
         heading: 'A perfect F!',
         paragraph: 'Some teachers award full credit if you can do that!',
         image: 'https://www.crowdfunder.co.uk/uploads/projects/14789.png?1424100369',
-        button: '<button type="button" class="seeResults">See Results!</button>'
+        button: '<button type="button" class="seeResults"><span>See Results!</span></button>'
     }
 ]

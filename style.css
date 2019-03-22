@@ -26,13 +26,13 @@ header {
 
 .questionNumber {
     float: left;
-    margin-left: 5px;
+    margin-left: 10px;
     padding-top: 18px;
 }
 
 .numberCorrect {
    float: right;
-   margin-right: 5px;
+   margin-right: 10px;
    padding-top: 18px;
 }
 
@@ -46,11 +46,17 @@ header {
 
 .quizStart {
     text-align: center;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
-.quizTitle {
+#quizTitle {
+    font-size: 100px;
+    margin-bottom: 0px;
+}
 
+#quizSubtitle {
+    font-size: 40px;
+    margin-top: 0px;
 }
 
 /* End start screen styling */
@@ -150,6 +156,35 @@ button {
     margin-top: 105px;
 }
 
+.questionResultDisplay {
+    font-size: 70px;
+    margin-bottom: 0;
+}
+
+.questionResultMessage_1 {
+    font-size: 35px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.questionResultMessage_2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#actualCorrectAnswer {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+p span {
+    font-weight: bold;
+    font-size: 35px;
+}
+
 .moveOn {
     margin-top: 10px;
     margin-right: 10px;
@@ -170,6 +205,29 @@ button {
 
 .quizEndScreen {
     text-align: center;
+}
+
+#finalScoreDisplay {
+    font-size: 100px;
+    margin-bottom: 0;
+}
+
+#goatRating {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#goatRatingMessage {
+    font-size: 30px;
+}
+
+#finalImageSizing {
+    height: 40%;
+    width: 40%;
+    margin-bottom: 10px;
+    border-style: outset;
+    border-width: 6px;
+    border-color: black;
 }
 
 /* End end screen styling

@@ -95,20 +95,20 @@ function userAnswerCorrect() {
 function correctAnswerDisplay() {
     if (questionNumber < STORE.length || overallScore === 5){
         return `<div class="correctAnswerDisplay">
-            <h2>Correct!</h2>
-            <h2>${FEEDBACK[overallScore-1].heading}</h2>
-            <p>${FEEDBACK[overallScore-1].paragraph}</p>
+            <h2 class="questionResultDisplay">Correct!</h2>
+            <h2 class="questionResultMessage_1">${FEEDBACK[overallScore-1].heading}</h2>
             <img src="${FEEDBACK[overallScore-1].image}"  class="imageSizing">
+            <p class="questionResultMessage_2">${FEEDBACK[overallScore-1].paragraph}</p>
             </div>
             ${FEEDBACK[overallScore-1].button}`
     } else if (questionNumber === STORE.length) {
         return `<div class="correctAnswerDisplay">
-            <h2>Correct!</h2>
-            <h2>Way to finish strong!</h2>
-            <p>Let's see how you did!</p>
+            <h2 class="questionResultDisplay">Correct!</h2>
+            <h2 class="questionResultMessage_1">Way to finish strong!</h2>
             <img src="http://www.adobeacres.net/IMG_1499.JPG" class="imageSizing">
+            <p Class="questionResultMessage_2">Let's see how you did!</p>
             </div>
-            <button type="button" class="seeResults">See Results!</button>`
+            <button type="button" class="seeResults"><span>See Results!</span></button>`
       }
 }
 
@@ -121,22 +121,22 @@ function userAnswerIncorrect() {
 function incorrectAnswerDisplay() {
     if (questionNumber < STORE.length || numberIncorrect === 5) {
         return `<div class="incorrectAnswerDisplay">
-            <h2>Incorrect!</h2>
-            <h2>${FEEDBACK[numberIncorrect+4].heading}</h2>
-            <p>${FEEDBACK[numberIncorrect+4].paragraph}</p>
-            <p>The correct answer was: ${STORE[questionNumber-1].correctAnswer}.</p>
+            <h2 class="questionResultDisplay">Incorrect!</h2>
+            <h2 class="questionResultMessage_1">${FEEDBACK[numberIncorrect+4].heading}</h2>
+            <p id="actualCorrectAnswer">The correct answer was: <span>${STORE[questionNumber-1].correctAnswer}</span>.</p>
             <img src="${FEEDBACK[numberIncorrect+4].image}" class="imageSizing">
+            <p class="questionResultMessage_2">${FEEDBACK[numberIncorrect+4].paragraph}</p>
             </div>
             ${FEEDBACK[numberIncorrect+4].button}`
     } else if (questionNumber === STORE.length) {
         return `<div class="incorrectAnswerDisplay">
-            <h2>Incorrect!</h2>
-            <h2>Well you got the last one wrong.</h2>
-            <p>Don't let it keep you down though!</p>
-            <p>The correct answer was: ${STORE[questionNumber-1].correctAnswer}.</p>
+            <h2 class="questionResultDisplay">Incorrect!</h2>
+            <h2 class="questionResultMessage_1">Well you got the last one wrong.</h2>
+            <p id="actualCorrectAnswer">The correct answer was: <span>${STORE[questionNumber-1].correctAnswer}</span>.</p>
             <img src="http://4.bp.blogspot.com/-exO_s6VltRQ/T1Yhjd-NYPI/AAAAAAAAF68/kHKJk0DNzS0/s1600/Screen+shot+2012-03-06+at+7.36.03+AM.png" class="imageSizing">
+            <p class="questionResultMessage_2">Don't let it keep you down though!</p>
             </div>
-            <button type="button" class="seeResults">See Results!</button>`
+            <button type="button" class="seeResults"><span>See Results!</span></button>`
       }
 }
 
@@ -151,9 +151,11 @@ function createEndScreen() {
     $('header').addClass('hide');
     generateGoatRating();
     return `<div class="quizEndScreen">
-        <h1>Overall Score: ${overallScore}</h1>
-        <h2>Goat Rating: ${goatRating[0]} - ${goatRating[1]}</h2>
-        <button class="restartButton">Start Over?</button>
+        <h1 id="finalScoreDisplay">Overall Score: ${overallScore}</h1>
+        <h2 id="goatRating">Goat Rating: ${goatRating[0]}</h2>
+        <h2 id="goatRatingMessage">${goatRating[1]}</h2>
+        <img src="${FEEDBACK[overallScore-1].image}" id="finalImageSizing"><br>
+        <button class="restartButton"><span>Start Over?</span></button>
         </div>`
 }
 
