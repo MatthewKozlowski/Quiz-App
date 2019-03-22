@@ -18,8 +18,8 @@ function showHeader() {
 
 function createQuestion() {
     if(questionNumber-1 < STORE.length) {
-        return `<div class="question">
-            <h2>${STORE[questionNumber-1].question}</h2>
+        return `<div class="questionContainer">
+            <h2 class="question">${STORE[questionNumber-1].question}</h2>
             <form>
             <fieldset>
             <div class="answerContainer"></div>
@@ -56,13 +56,13 @@ function selectAnswerChoice(event) {
 function updateQuestionNumber() {
     if (questionNumber < STORE.length) {
      questionNumber++;
-     $('.questionNumber').text(questionNumber);
+     $('.questionNumber').text('Question: '+questionNumber+'/5');
     }
  }
 
 function updateNumberCorrect() {
     overallScore++;
-    $('.numberCorrect').text(overallScore);
+    $('.numberCorrect').text('Correct: '+overallScore+'/5');
 }
 
 function nextQuestion() {
@@ -89,7 +89,7 @@ function checkAnswer() {
 function userAnswerCorrect() {
     updateNumberCorrect();
     $('form').remove();
-    $('.question').html(correctAnswerDisplay());
+    $('.questionContainer').html(correctAnswerDisplay());
 }
 
 function correctAnswerDisplay() {
@@ -115,7 +115,7 @@ function correctAnswerDisplay() {
 function userAnswerIncorrect() {
     numberIncorrect++;
     $('form').remove();
-    $('.question').html(incorrectAnswerDisplay());
+    $('.questionContainer').html(incorrectAnswerDisplay());
 }
 
 function incorrectAnswerDisplay() {
@@ -142,7 +142,7 @@ function incorrectAnswerDisplay() {
 
 function renderEndScreen() {
     $('main').on('click', '.seeResults', function(event){
-        $('.question').remove();
+        $('.questionContainer').remove();
         $('main').html(createEndScreen());
     })
 }
