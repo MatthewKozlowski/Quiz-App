@@ -24,10 +24,9 @@ function createQuestion() {
             <fieldset>
             <div class="answerContainer"></div>
             <br>
-            <button type="submit" class="submitButton">Submit</button>    
+            <button type="submit" class="submitButton"><span>Submit</span></button>    
             </fieldset>
             </form>
-            <button type="button" class="moveOn hide">Move On</button>
             </div>`
     }
 }
@@ -42,14 +41,15 @@ function renderQuestion() {
 function createAnswerChoices(i) {
     return `<input type="radio" id="answerChoice${i}" value="${STORE[questionNumber-1].answers[i]}" name="answer">
             <label for="answerChoice${i}">${STORE[questionNumber-1].answers[i]}</label>
-            <br>`
+            `
 }
 
 //function to check hidden radio buttons - IN PROGRESS
 
-function selectAnswerChoice() {
+function selectAnswerChoice(event) {
     $('.answerForm').on('click', 'label', function(){
-        $(this).checked.stopPropagation();
+        $('label').checked;
+        event.stopPropagation();
     })
 }
 

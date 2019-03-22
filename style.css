@@ -64,43 +64,65 @@ input[type="radio"] {
     height: 0;
 }
 
-input[type="radio"]:active:hover ~ label {
+input[type="radio"]:active + label {
     opacity: 1;
+    
   }
 
-input[type="radio"]:checked ~ label {
+input[type="radio"]:checked + label {
     opacity: 1;
-    border: 1px solid;
+    border: 6px solid;
 }
 
-.selectedAnswer {
-    border: 1px solid;
+label:hover {
+    background-color: #e4cb58;
 }
 
 label {
     box-sizing: border-box;
     display: block;
-    background-color: pink;
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
-    padding:0;
+    border: 2px solid;
+    background-color: #19bc8b;
+    width: 400px;
+    height: 75px;
+    font-size: 30px;
     margin: auto;
-    border: initial;
+    padding-top: 17px;
+    
 }
 
+button:hover span {
+    padding-right: 35px;
+}
+
+button span {
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
 button {
     display: inline-block;
-    width: 200px;
-    background-color: pink;
+    width: 400px;
+    background-color: #a972cb;
     padding: 14px 28px;
-    font-size: 20px;
+    font-size: 40px;
+    font-weight: bold;
     cursor: pointer;
     text-align: center;
-}
-
-#answerChoice0 {
-
+    font-family: 'Sniglet', cursive;
 }
 
 .nextQuestion {
