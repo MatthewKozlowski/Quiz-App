@@ -150,7 +150,7 @@ function renderEndScreen() {
 function createEndScreen() {
     $('header').addClass('hide');
     generateGoatRating();
-    return `<div class="quizEndScreen">
+    return `<div id="quizEndScreen">
         <h1 id="finalScoreDisplay">Overall Score: ${overallScore}</h1>
         <h2 id="goatRating">Goat Rating: ${goatRating[0]}</h2>
         <h2 id="goatRatingMessage">${goatRating[1]}</h2>

@@ -203,7 +203,7 @@ p span {
 
 /* Begin end screen styling */
 
-.quizEndScreen {
+#quizEndScreen {
     text-align: center;
 }
 
