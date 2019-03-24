@@ -232,3 +232,65 @@ p span {
 
 /* End end screen styling
 
+/* Media Queries */
+
+@media screen and (max-width: 400px) {
+    
+    #quizTitle {
+        font-size: 70px;
+        
+    }
+
+    #quizSubtitle {
+        font-size: 30px;
+    }
+
+    button {
+        width: 250px;
+    }
+
+    label {
+        width: 250px;
+    }
+
+    header {
+        font-size: 25px;
+    }
+
+    .question {
+        font-size: 30px;
+    }
+    
+    .questionResultDisplay {
+        font-size: 50px;
+    }
+    
+    .questionResultMessage_1 {
+        font-size: 25px;
+    }
+    
+    .questionResultMessage_2 {
+        font-size: 20px;
+    }
+    
+    #actualCorrectAnswer {
+        font-size: 30px;
+    }
+    
+    p span {
+        font-size: 35px;
+    }
+
+    #finalScoreDisplay {
+        font-size: 70px;
+    }
+    
+    #goatRating {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #goatRatingMessage {
+        font-size: 20px;
+    }
+}

@@ -34,17 +34,14 @@ function createQuestion() {
 function renderQuestion() {
     $('.answerForm').html(createQuestion());
     for (let i = 0; i < 4; i++) {
-    $('.answerContainer').append(createAnswerChoices(i));
+        $('.answerContainer').append(createAnswerChoices(i));
     }
 }
 
 function createAnswerChoices(i) {
     return `<input type="radio" id="answerChoice${i}" value="${STORE[questionNumber-1].answers[i]}" name="answer">
-            <label for="answerChoice${i}">${STORE[questionNumber-1].answers[i]}</label>
-            `
+            <label for="answerChoice${i}">${STORE[questionNumber-1].answers[i]}</label>`
 }
-
-//function to check hidden radio buttons - IN PROGRESS
 
 function selectAnswerChoice(event) {
     $('.answerForm').on('click', 'label', function(){
@@ -97,7 +94,7 @@ function correctAnswerDisplay() {
         return `<div class="correctAnswerDisplay">
             <h2 class="questionResultDisplay">Correct!</h2>
             <h2 class="questionResultMessage_1">${FEEDBACK[overallScore-1].heading}</h2>
-            <img src="${FEEDBACK[overallScore-1].image}"  class="imageSizing">
+            <img src="${FEEDBACK[overallScore-1].image}"  class="imageSizing" alt="A image of an encouraging goat">
             <p class="questionResultMessage_2">${FEEDBACK[overallScore-1].paragraph}</p>
             </div>
             ${FEEDBACK[overallScore-1].button}`
@@ -105,7 +102,7 @@ function correctAnswerDisplay() {
         return `<div class="correctAnswerDisplay">
             <h2 class="questionResultDisplay">Correct!</h2>
             <h2 class="questionResultMessage_1">Way to finish strong!</h2>
-            <img src="http://www.adobeacres.net/IMG_1499.JPG" class="imageSizing">
+            <img src="http://www.adobeacres.net/IMG_1499.JPG" class="imageSizing alt="A image of a goat in adorable pajamas">
             <p Class="questionResultMessage_2">Let's see how you did!</p>
             </div>
             <button type="button" class="seeResults"><span>See Results!</span></button>`
@@ -124,7 +121,7 @@ function incorrectAnswerDisplay() {
             <h2 class="questionResultDisplay">Incorrect!</h2>
             <h2 class="questionResultMessage_1">${FEEDBACK[numberIncorrect+4].heading}</h2>
             <p id="actualCorrectAnswer">The correct answer was: <span>${STORE[questionNumber-1].correctAnswer}</span>.</p>
-            <img src="${FEEDBACK[numberIncorrect+4].image}" class="imageSizing">
+            <img src="${FEEDBACK[numberIncorrect+4].image}" class="imageSizing" alt="An image of a sad, adorable goat">
             <p class="questionResultMessage_2">${FEEDBACK[numberIncorrect+4].paragraph}</p>
             </div>
             ${FEEDBACK[numberIncorrect+4].button}`
@@ -133,7 +130,7 @@ function incorrectAnswerDisplay() {
             <h2 class="questionResultDisplay">Incorrect!</h2>
             <h2 class="questionResultMessage_1">Well you got the last one wrong.</h2>
             <p id="actualCorrectAnswer">The correct answer was: <span>${STORE[questionNumber-1].correctAnswer}</span>.</p>
-            <img src="http://4.bp.blogspot.com/-exO_s6VltRQ/T1Yhjd-NYPI/AAAAAAAAF68/kHKJk0DNzS0/s1600/Screen+shot+2012-03-06+at+7.36.03+AM.png" class="imageSizing">
+            <img src="http://4.bp.blogspot.com/-exO_s6VltRQ/T1Yhjd-NYPI/AAAAAAAAF68/kHKJk0DNzS0/s1600/Screen+shot+2012-03-06+at+7.36.03+AM.png" class="imageSizing" alt="An image of a motivational goat">
             <p class="questionResultMessage_2">Don't let it keep you down though!</p>
             </div>
             <button type="button" class="seeResults"><span>See Results!</span></button>`
@@ -150,13 +147,24 @@ function renderEndScreen() {
 function createEndScreen() {
     $('header').addClass('hide');
     generateGoatRating();
-    return `<div id="quizEndScreen">
-        <h1 id="finalScoreDisplay">Overall Score: ${overallScore}</h1>
-        <h2 id="goatRating">Goat Rating: ${goatRating[0]}</h2>
-        <h2 id="goatRatingMessage">${goatRating[1]}</h2>
-        <img src="${FEEDBACK[overallScore-1].image}" id="finalImageSizing"><br>
-        <button class="restartButton"><span>Start Over?</span></button>
-        </div>`
+    if (overallScore >= 1){
+        return `<div id="quizEndScreen">
+            <h1 id="finalScoreDisplay">Overall Score: ${overallScore}</h1>
+            <h2 id="goatRating">Goat Rating: ${goatRating[0]}</h2>
+            <h2 id="goatRatingMessage">${goatRating[1]}</h2>
+            <img src="${FEEDBACK[overallScore-1].image}" id="finalImageSizing" alt="A picture of an adorable goat"><br>
+            <button class="restartButton"><span>Start Over?</span></button>
+            </div>`
+    } else if (overallScore === 0) {
+        return `<div id="quizEndScreen">
+            <h1 id="finalScoreDisplay">Overall Score: ${overallScore}</h1>
+            <h2 id="goatRating">Goat Rating: ${goatRating[0]}</h2>
+            <h2 id="goatRatingMessage">${goatRating[1]}</h2>
+            <img src="${FEEDBACK[overallScore].image}" id="finalImageSizing" alt="A picture of an adorable goat"><br>
+            <button class="restartButton"><span>Start Over?</span></button>
+            </div>`
+
+    }        
 }
 
 function generateGoatRating() {
